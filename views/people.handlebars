@@ -1,0 +1,39 @@
+<h1>Add a Character to your specifications:</h1>
+{{#each foo}}
+{{this}}
+{{/each}}
+<table>
+    <thead> 
+        <th>Username</th> 
+        <th>Guild Name</th> 
+        <th>Job</th>
+        <th>Level</th>  
+    </thead> 
+    <tbody> 
+        {{#each people}} 
+        <tr> 
+            <td>{{uname}}</td> 
+            <td>{{gname}}</td> 
+            <td>{{job}}</td> 
+            <td>{{level}}</td>
+            <td><button onclick="deletePerson({{id}})">Delete</button></td>
+            <td><a href="/people/{{id}}">Update or See Guild members</a></td>
+        </tr> 
+        {{/each}} 
+
+    </tbody> 
+    <form id="addperson" action="/people" method="post">
+    Username: <input type="text" name="uname"><br>
+    Guild Name: <input type="text" name="gname"><br>
+
+    Job: <select name="job"> 
+        {{#each jobs}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+
+    Level: <input type="number" name="level"><br>
+    <input type="submit" value="Submit">
+    </form>
+    <h1> --All player information-- </h1>
+</table> 

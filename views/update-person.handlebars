@@ -1,0 +1,34 @@
+<h1>Update {{person.uname}}'s information</h1>
+<form id="update-person" action="/people" method="post">
+
+    Username: <input type="text" name="uname" value="{{person.uname}}"><br>
+
+    Guild name: <input type="text" name="gname" value="{{person.gname}}"><br>
+
+    Job: <select name="job" id="job-selector"> 
+        {{#each jobs}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+
+    Level: <input type="number" name="level" value="{{person.level}}"><br>
+
+</form>
+<button onclick="updatePerson({{person.id}})">Update</button>
+<h1>Current {{person.gname}} guild members</h1>
+<table>
+    <thead> 
+         
+    </thead> 
+    <tbody> 
+
+
+        <tr> 
+			<td>{{guild.count}}</td>       
+		</tr> 
+
+
+    </tbody> 
+
+<table>
+<script defer>selectJob({{person.job}});</script>
