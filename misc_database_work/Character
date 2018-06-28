@@ -1,0 +1,30 @@
+Character 
+has name
+has level
+has job
+has one guild
+has missions
+have a hometown
+**Character can have many jobs
+
+Job 
+has a name (civilian, warrior, assassin, magician, archer)
+has Leader
+has weapon specialty
+
+
+Guild
+has a name
+has a town it resides in
+might be part of an alliance
+has a city it resides in
+
+Alliance 
+has a name
+has a town it resides in
+has at least 2 guild in alliance
+
+Town
+has a name
+has a population
+has a primary language
